@@ -33,7 +33,7 @@ resource "azurerm_public_ip" "public_ip" {
   name                = "${each.key}-pip"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
-  allocation_method   = "static"
+  allocation_method   = "Static"
   sku                 = "Standard"
 }
 
@@ -48,7 +48,7 @@ resource "azurerm_network_interface" "nic" {
   ip_configuration {
     name                          = "internal"
     subnet_id                     = azurerm_subnet.subnet[each.key].id
-    private_ip_address_allocation = "Dynamic"
+    private_ip_address_allocation = "Static"
     public_ip_address_id          = azurerm_public_ip.public_ip[each.key].id
   }
 }
@@ -109,3 +109,4 @@ resource "azurerm_windows_virtual_machine" "main" {
     version   = "latest"
   }
 }
+
