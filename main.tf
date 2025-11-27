@@ -29,12 +29,12 @@ resource "azurerm_subnet" "subnet" {
 
 # Public IP
 resource "azurerm_public_ip" "public_ip" {
-  for_each = local.vm_map
-
+  for_each            = local.vm_map
   name                = "${each.key}-pip"
   location            = azurerm_resource_group.rg.location
   resource_group_name = azurerm_resource_group.rg.name
   allocation_method   = "static"
+  sku                 = "Standard"
 }
 
 # NIC
