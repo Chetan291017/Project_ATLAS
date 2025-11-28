@@ -1,4 +1,4 @@
-name: Deploy Azure VM's using Linux local VS Studio, GIT, GITHHB, CI/CD and Terraform
+name: Deploy Azure RG's using Linux local VS Studio, GIT, GITHHB, CI/CD and Terraform
 
 on: workflow_dispatch
 
@@ -14,8 +14,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Add /usr/bin to PATH
-        run: echo "/usr/bin" >> $GITHUB_PATH
+      #- name: Add /usr/bin to PATH
+      #  run: echo "/usr/bin" >> $GITHUB_PATH
 
       - name: Azure Login (Service Principal)
         uses: azure/login@v2
