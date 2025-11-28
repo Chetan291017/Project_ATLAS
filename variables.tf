@@ -7,3 +7,4 @@ variable "location" {
   description = "physical location"
   type        = string
   default     = "East US"
+}
