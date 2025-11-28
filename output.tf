@@ -1,5 +1,5 @@
-
 output "rg_name" {
-  value = azurerm_resource_group_rg.name
+  value = azurerm_resource_group.rg.name
 }
+
 
